@@ -8,12 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		977992EE2315A9480040243F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977992ED2315A9480040243F /* AppDelegate.swift */; };
-		977992F02315A9480040243F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977992EF2315A9480040243F /* ViewController.swift */; };
 		977992F32315A9480040243F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 977992F12315A9480040243F /* Main.storyboard */; };
 		977992F52315A94A0040243F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 977992F42315A94A0040243F /* Assets.xcassets */; };
 		977992F82315A94A0040243F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 977992F62315A94A0040243F /* LaunchScreen.storyboard */; };
 		977993032315A94A0040243F /* ParsingJSONLabTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977993022315A94A0040243F /* ParsingJSONLabTests.swift */; };
 		9779930E2315A94A0040243F /* ParsingJSONLabUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9779930D2315A94A0040243F /* ParsingJSONLabUITests.swift */; };
+		9779931C2315B3340040243F /* ColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9779931B2315B3340040243F /* ColorViewController.swift */; };
+		9779931E2315B3430040243F /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9779931D2315B3430040243F /* WeatherViewController.swift */; };
+		977993202315B3520040243F /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9779931F2315B3520040243F /* UserViewController.swift */; };
+		977993222315B40C0040243F /* detailWeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977993212315B40C0040243F /* detailWeatherViewController.swift */; };
+		977993242315B41A0040243F /* detailColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977993232315B41A0040243F /* detailColorViewController.swift */; };
+		977993262315B42C0040243F /* detailUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977993252315B42C0040243F /* detailUserViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +41,6 @@
 /* Begin PBXFileReference section */
 		977992EA2315A9480040243F /* ParsingJSONLab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ParsingJSONLab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		977992ED2315A9480040243F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		977992EF2315A9480040243F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		977992F22315A9480040243F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		977992F42315A94A0040243F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		977992F72315A94A0040243F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +51,12 @@
 		977993092315A94A0040243F /* ParsingJSONLabUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ParsingJSONLabUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9779930D2315A94A0040243F /* ParsingJSONLabUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParsingJSONLabUITests.swift; sourceTree = "<group>"; };
 		9779930F2315A94A0040243F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9779931B2315B3340040243F /* ColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorViewController.swift; sourceTree = "<group>"; };
+		9779931D2315B3430040243F /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
+		9779931F2315B3520040243F /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
+		977993212315B40C0040243F /* detailWeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailWeatherViewController.swift; sourceTree = "<group>"; };
+		977993232315B41A0040243F /* detailColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailColorViewController.swift; sourceTree = "<group>"; };
+		977993252315B42C0040243F /* detailUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailUserViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +87,9 @@
 		977992E12315A9480040243F = {
 			isa = PBXGroup;
 			children = (
+				9779931D2315B3430040243F /* WeatherViewController.swift */,
+				9779931B2315B3340040243F /* ColorViewController.swift */,
+				9779931F2315B3520040243F /* UserViewController.swift */,
 				977992EC2315A9480040243F /* ParsingJSONLab */,
 				977993012315A94A0040243F /* ParsingJSONLabTests */,
 				9779930C2315A94A0040243F /* ParsingJSONLabUITests */,
@@ -98,8 +111,10 @@
 			isa = PBXGroup;
 			children = (
 				977992ED2315A9480040243F /* AppDelegate.swift */,
-				977992EF2315A9480040243F /* ViewController.swift */,
 				977992F12315A9480040243F /* Main.storyboard */,
+				977993212315B40C0040243F /* detailWeatherViewController.swift */,
+				977993232315B41A0040243F /* detailColorViewController.swift */,
+				977993252315B42C0040243F /* detailUserViewController.swift */,
 				977992F42315A94A0040243F /* Assets.xcassets */,
 				977992F62315A94A0040243F /* LaunchScreen.storyboard */,
 				977992F92315A94A0040243F /* Info.plist */,
@@ -256,8 +271,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				977992F02315A9480040243F /* ViewController.swift in Sources */,
+				977993262315B42C0040243F /* detailUserViewController.swift in Sources */,
+				9779931C2315B3340040243F /* ColorViewController.swift in Sources */,
+				977993222315B40C0040243F /* detailWeatherViewController.swift in Sources */,
+				977993202315B3520040243F /* UserViewController.swift in Sources */,
+				9779931E2315B3430040243F /* WeatherViewController.swift in Sources */,
 				977992EE2315A9480040243F /* AppDelegate.swift in Sources */,
+				977993242315B41A0040243F /* detailColorViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

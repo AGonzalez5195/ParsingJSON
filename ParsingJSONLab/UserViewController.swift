@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  UserViewController.swift
 //  ParsingJSONLab
 //
 //  Created by Anthony Gonzalez on 8/27/19.
@@ -8,13 +8,13 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class UserViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-    }
 
+       
+    }
+    
 
 }
-
