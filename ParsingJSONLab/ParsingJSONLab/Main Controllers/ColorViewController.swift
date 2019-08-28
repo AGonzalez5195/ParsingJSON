@@ -15,9 +15,25 @@ class ColorViewController: UIViewController {
             tableView.reloadData()
         }
     }
-    
-
     @IBOutlet weak var tableView: UITableView!
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let segueIdentifer = segue.identifier else {fatalError("No indentifier in segue")}
+        
+        switch segueIdentifer {
+        case "segueToDetail":
+            guard let destVC = segue.destination as? detailColorViewController else {
+                fatalError("Unexpected segue VC")
+            }
+            guard let selectedIndexPath = tableView.indexPathForSelectedRow else {fatalError("No row selected")
+            }
+            let currentColor = colors[selectedIndexPath.row]
+            destVC.color = currentColor
+        default:
+            fatalError("unexpected segue identifies")
+        }
+    }
+    
     override func viewDidLoad() {
         tableView.dataSource = self
         super.viewDidLoad()
@@ -54,8 +70,6 @@ extension ColorViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "colorCell")
         cell?.textLabel?.text = colors[indexPath.row].name.value
         cell?.textLabel?.textColor = .white
-        cell?.detailTextLabel?.textColor = .white
-        cell?.detailTextLabel?.text = colors[indexPath.row].hex.value
         cell?.backgroundColor = UIColor(displayP3Red: redValue, green: greenValue, blue: blueValue, alpha: 1.0)
         return cell!
     }
