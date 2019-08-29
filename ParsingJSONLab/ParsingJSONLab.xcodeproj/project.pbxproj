@@ -21,6 +21,11 @@
 		977993262315B42C0040243F /* detailUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977993252315B42C0040243F /* detailUserViewController.swift */; };
 		9779932A2315BC340040243F /* color.json in Resources */ = {isa = PBXBuildFile; fileRef = 977993292315BC340040243F /* color.json */; };
 		9779932C2315BC6C0040243F /* color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9779932B2315BC6C0040243F /* color.swift */; };
+		9779932E23161F040040243F /* weather.json in Resources */ = {isa = PBXBuildFile; fileRef = 9779932D23161F040040243F /* weather.json */; };
+		9779933023161F150040243F /* weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9779932F23161F150040243F /* weather.swift */; };
+		9779933323175F0A0040243F /* users.json in Resources */ = {isa = PBXBuildFile; fileRef = 9779933223175F090040243F /* users.json */; };
+		9779933523175F1E0040243F /* users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9779933423175F1E0040243F /* users.swift */; };
+		9779933923177AF50040243F /* jsonError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9779933823177AF50040243F /* jsonError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +66,11 @@
 		977993252315B42C0040243F /* detailUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailUserViewController.swift; sourceTree = "<group>"; };
 		977993292315BC340040243F /* color.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = color.json; sourceTree = "<group>"; };
 		9779932B2315BC6C0040243F /* color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = color.swift; sourceTree = "<group>"; };
+		9779932D23161F040040243F /* weather.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = weather.json; sourceTree = "<group>"; };
+		9779932F23161F150040243F /* weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = weather.swift; sourceTree = "<group>"; };
+		9779933223175F090040243F /* users.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = users.json; sourceTree = "<group>"; };
+		9779933423175F1E0040243F /* users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = users.swift; sourceTree = "<group>"; };
+		9779933823177AF50040243F /* jsonError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = jsonError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,7 +102,6 @@
 			isa = PBXGroup;
 			children = (
 				977992EC2315A9480040243F /* ParsingJSONLab */,
-				977993012315A94A0040243F /* ParsingJSONLabTests */,
 				9779930C2315A94A0040243F /* ParsingJSONLabUITests */,
 				977992EB2315A9480040243F /* Products */,
 			);
@@ -113,13 +122,12 @@
 			children = (
 				977993272315B5BE0040243F /* Main Controllers */,
 				977993282315B5D60040243F /* Detail Controllers */,
-				977992F12315A9480040243F /* Main.storyboard */,
-				977993292315BC340040243F /* color.json */,
-				9779932B2315BC6C0040243F /* color.swift */,
+				97799336231777B30040243F /* Models */,
+				97799337231777D40040243F /* Views */,
 				977992ED2315A9480040243F /* AppDelegate.swift */,
-				977992F42315A94A0040243F /* Assets.xcassets */,
-				977992F62315A94A0040243F /* LaunchScreen.storyboard */,
 				977992F92315A94A0040243F /* Info.plist */,
+				977992F42315A94A0040243F /* Assets.xcassets */,
+				977993012315A94A0040243F /* ParsingJSONLabTests */,
 			);
 			path = ParsingJSONLab;
 			sourceTree = "<group>";
@@ -145,9 +153,9 @@
 		977993272315B5BE0040243F /* Main Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				9779931D2315B3430040243F /* WeatherViewController.swift */,
 				9779931B2315B3340040243F /* ColorViewController.swift */,
 				9779931F2315B3520040243F /* UserViewController.swift */,
+				9779931D2315B3430040243F /* WeatherViewController.swift */,
 			);
 			path = "Main Controllers";
 			sourceTree = "<group>";
@@ -155,11 +163,34 @@
 		977993282315B5D60040243F /* Detail Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				977993212315B40C0040243F /* detailWeatherViewController.swift */,
 				977993232315B41A0040243F /* detailColorViewController.swift */,
 				977993252315B42C0040243F /* detailUserViewController.swift */,
+				977993212315B40C0040243F /* detailWeatherViewController.swift */,
 			);
 			path = "Detail Controllers";
+			sourceTree = "<group>";
+		};
+		97799336231777B30040243F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9779933823177AF50040243F /* jsonError.swift */,
+				977993292315BC340040243F /* color.json */,
+				9779932B2315BC6C0040243F /* color.swift */,
+				9779933223175F090040243F /* users.json */,
+				9779933423175F1E0040243F /* users.swift */,
+				9779932D23161F040040243F /* weather.json */,
+				9779932F23161F150040243F /* weather.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		97799337231777D40040243F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				977992F12315A9480040243F /* Main.storyboard */,
+				977992F62315A94A0040243F /* LaunchScreen.storyboard */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,6 +297,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9779933323175F0A0040243F /* users.json in Resources */,
+				9779932E23161F040040243F /* weather.json in Resources */,
 				977992F82315A94A0040243F /* LaunchScreen.storyboard in Resources */,
 				9779932A2315BC340040243F /* color.json in Resources */,
 				977992F52315A94A0040243F /* Assets.xcassets in Resources */,
@@ -300,8 +333,11 @@
 				977993202315B3520040243F /* UserViewController.swift in Sources */,
 				9779931E2315B3430040243F /* WeatherViewController.swift in Sources */,
 				9779932C2315BC6C0040243F /* color.swift in Sources */,
+				9779933523175F1E0040243F /* users.swift in Sources */,
+				9779933923177AF50040243F /* jsonError.swift in Sources */,
 				977992EE2315A9480040243F /* AppDelegate.swift in Sources */,
 				977993242315B41A0040243F /* detailColorViewController.swift in Sources */,
+				9779933023161F150040243F /* weather.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,22 +9,39 @@
 import UIKit
 
 class detailUserViewController: UIViewController {
-
+    
+    @IBOutlet weak var userLabel: UILabel!
+    @IBOutlet weak var phoneNumberLabel: UILabel!
+    @IBOutlet weak var addressLabel: UILabel!
+    @IBOutlet weak var dobLabel: UILabel!
+    
+    var currentUser: userResults!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setLabelText()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func setLabelText () {
+        userLabel.text = currentUser.name.first.capitalized
+        var currentUsersDOB = currentUser.dob.date.components(separatedBy: "T")[0]
+        currentUsersDOB = Date.changeDateFormat(dateString: currentUsersDOB, fromFormat: "yyyy-MM-dd", toFormat: "MM/dd/yyyy")
+        dobLabel.text = "DOB: \(currentUsersDOB)"
+        phoneNumberLabel.text = "Phone #: \(currentUser.phone)"
+        addressLabel.text = "\(currentUser.location.street.capitalized), \(currentUser.location.city.capitalized), \(currentUser.location.state.uppercased())"
     }
-    */
+}
 
+
+extension Date {
+    static func changeDateFormat(dateString: String, fromFormat: String, toFormat: String) ->String {
+        let inputDateFormatter = DateFormatter()
+        inputDateFormatter.dateFormat = fromFormat
+        let date = inputDateFormatter.date(from: dateString)
+        
+        let outputDateFormatter = DateFormatter()
+        outputDateFormatter.dateFormat = toFormat
+        return outputDateFormatter.string(from: date!)
+    }
 }

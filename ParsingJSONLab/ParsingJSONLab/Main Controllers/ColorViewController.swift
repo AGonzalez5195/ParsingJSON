@@ -10,42 +10,33 @@ import UIKit
 
 class ColorViewController: UIViewController {
     
+    @IBOutlet weak var tableView: UITableView!
+    
     var colors = [ColorResults]() {
         didSet {
             tableView.reloadData()
         }
     }
-    @IBOutlet weak var tableView: UITableView!
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let segueIdentifer = segue.identifier else {fatalError("No indentifier in segue")}
+        guard let segueIdentifer = segue.identifier else {fatalError("No identifier in segue")}
         
         switch segueIdentifer {
         case "segueToDetail":
-            guard let destVC = segue.destination as? detailColorViewController else {
-                fatalError("Unexpected segue VC")
-            }
-            guard let selectedIndexPath = tableView.indexPathForSelectedRow else {fatalError("No row selected")
-            }
+            guard let destVC = segue.destination as? detailColorViewController else { fatalError("Unexpected segue VC") }
+            guard let selectedIndexPath = tableView.indexPathForSelectedRow else { fatalError("No row selected") }
             let currentColor = colors[selectedIndexPath.row]
-            destVC.color = currentColor
+            destVC.currentColor = currentColor
         default:
-            fatalError("unexpected segue identifies")
+            fatalError("unexpected segue identifier")
         }
     }
     
-    override func viewDidLoad() {
-        tableView.dataSource = self
-        super.viewDidLoad()
-        loadData()
-
-    }
     
     private func loadData() {
-        guard let pathToJSONFile = Bundle.main.path(forResource: "color", ofType: "json") else {
-            fatalError("Couldn't find json file")
-        }
-      
+        guard let pathToJSONFile = Bundle.main.path(forResource: "color", ofType: "json") else { fatalError("Couldn't find json file") }
+        
         let url = URL(fileURLWithPath: pathToJSONFile)
         do {
             let data = try Data(contentsOf: url)
@@ -55,7 +46,15 @@ class ColorViewController: UIViewController {
             fatalError("\(error)")
         }
     }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        loadData()
+        tableView.tableFooterView = UIView()
+    }
 }
+
+
 
 extension ColorViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -69,7 +68,6 @@ extension ColorViewController: UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "colorCell")
         cell?.textLabel?.text = colors[indexPath.row].name.value
-        cell?.textLabel?.textColor = .white
         cell?.backgroundColor = UIColor(displayP3Red: redValue, green: greenValue, blue: blueValue, alpha: 1.0)
         return cell!
     }

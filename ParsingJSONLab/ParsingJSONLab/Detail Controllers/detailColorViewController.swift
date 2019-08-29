@@ -16,14 +16,18 @@ class detailColorViewController: UIViewController {
     @IBOutlet weak var greenLabel: UILabel!
     @IBOutlet weak var blueLabel: UILabel!
     
-    var color: ColorResults!
+    var currentColor: ColorResults!
     
     override func viewDidLoad() {
-        
-        colorNameLabel.text = color.name.value
-        hexLabel.text = color.hex.value
-        redLabel.text = "R: \(color.rgb.fraction.r)"
-        greenLabel.text = "G: \(color.rgb.fraction.g)"
-        blueLabel.text = "B: \(color.rgb.fraction.b)"
+        super.viewDidLoad()
+        setLabelText()
+    }
+    
+    private func setLabelText () {
+        colorNameLabel.text = currentColor.name.value
+        hexLabel.text = currentColor.hex.value
+        redLabel.text = "R: \(currentColor.rgb.fraction.r)"
+        greenLabel.text = "G: \(currentColor.rgb.fraction.g)"
+        blueLabel.text = "B: \(currentColor.rgb.fraction.b)"
     }
 }

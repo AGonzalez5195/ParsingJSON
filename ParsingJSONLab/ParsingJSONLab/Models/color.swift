@@ -8,10 +8,6 @@
 
 import Foundation
 
-enum JSONError: Error {
-    case decodingError(Error)
-}
-
 struct ColorModel: Codable {
     let colors: [ColorResults]
 }
@@ -28,7 +24,6 @@ struct ColorResults: Codable {
             return colors.colors
         } catch {
             throw JSONError.decodingError(error)
-            
         }
     }
 }

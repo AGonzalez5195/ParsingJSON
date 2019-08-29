@@ -9,22 +9,21 @@
 import UIKit
 
 class detailWeatherViewController: UIViewController {
-
+    
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var tempLabel: UILabel!
+    @IBOutlet weak var weatherLabel: UILabel!
+    
+    var currentWeather: WeatherResult!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setLabelText()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func setLabelText () {
+        nameLabel.text = currentWeather.name
+        tempLabel.text = "\(currentWeather.main.temp) °C"
+        weatherLabel.text = currentWeather.weather[0].main //Weather is in an array and only has one element (since I only specified one) so it can be accessed via index 0.
     }
-    */
-
 }
